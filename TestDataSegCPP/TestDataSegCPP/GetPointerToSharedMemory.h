@@ -1,0 +1,2 @@
+void loadSharedMemory();
+void * getSharedMemory();
