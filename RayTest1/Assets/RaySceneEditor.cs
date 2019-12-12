@@ -29,20 +29,12 @@ public class RaySceneEditor
     }
     static void Update()
     {
-        //bizzbuzz = GameObject.Find("ray").transform;
-        //byte[] cstring = new byte[8];
-        //float[] foobar = { bizzbuzz.position.x*100, bizzbuzz.position.y*100 };
-        //Buffer.BlockCopy(foobar, 0, cstring, 0, 8);
-        //Marshal.Copy(cstring, 0, data, cstring.Length);
-        //Debug.Log(Marshal.PtrToStructure(data,typeof(Vector2)));
+        //Mesh mesh;
         if (Application.isPlaying) {
-            //Buffer.BlockCopy(matrix4X4s,0,datablock, 0, Marshal.SizeOf(typeof(Matrix4x4))*matrix4X4s.Length);
-            //Marshal.Copy(datablock, 0, data, datablock.Length);
             unsafe
             {
                 for (int i = 0; i < matrix4X4s.Length; i++)
                 {
-                    //matrix4X4s[i] = everything[i].worldToLocalMatrix;
                     if (everything[i].hasChanged)
                     {
                         matrix4X4s[i] = swapBetweenRaylibAndUnitySpace(everything[i].localToWorldMatrix,false);
@@ -53,14 +45,14 @@ public class RaySceneEditor
                     }
                     else
                     {
-                        
+  
                         Matrix4x4 m = new Matrix4x4();
                         
                         GetNativeMatrix(out m, matrixData, i);
                         m = swapBetweenRaylibAndUnitySpace(m,true);
 
                         everything[i].position = m.GetColumn(3);
-
+                        #region decompose matrix
                         // Extract new local rotation
                         everything[i].rotation = Quaternion.LookRotation(
                             m.GetColumn(2),
@@ -74,7 +66,7 @@ public class RaySceneEditor
                             m.GetColumn(2).magnitude
                         );
                         matrix4X4s[i] = m;
-
+                        #endregion 
                         //get the native matrix and make it not native and apply it to a transform
                     }
                     everything[i].hasChanged = false;
