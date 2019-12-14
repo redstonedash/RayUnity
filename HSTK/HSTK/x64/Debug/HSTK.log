@@ -1,5 +1,159 @@
 ﻿C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets(377,5): warning MSB8004: Output Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Output Directory.
 C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets(391,5): warning MSB8028: The intermediate directory (x64\Debug\) contains files shared from another project (TestDataSegCPP.vcxproj).  This can lead to incorrect clean and rebuild behavior.
   main.cpp
-c:\users\s189064\documents\github\rayunity\hstk\hstk\main.cpp(14): warning C4091: '': ignored on left of 'Mesh' when no variable is declared
-c:\users\s189064\documents\github\rayunity\hstk\hstk\main.cpp(45): error C2065: 'RenderCubes': undeclared identifier
+c:\users\s189064\documents\github\rayunity\hstk\hstk\components.h(34): warning C4010: single-line comment contains line-continuation character
+c:\users\s189064\documents\github\rayunity\hstk\hstk\components.h(43): warning C4005: 'COMPONENT': macro redefinition
+  c:\users\s189064\documents\github\rayunity\hstk\hstk\components.h(41): note: see previous definition of 'COMPONENT'
+c:\users\s189064\documents\github\rayunity\hstk\thirdparty\raylib\raygui.h(587): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\s189064\documents\github\rayunity\hstk\thirdparty\raylib\raygui.h(716): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\s189064\documents\github\rayunity\hstk\thirdparty\raylib\raygui.h(805): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
+c:\users\s189064\documents\github\rayunity\hstk\thirdparty\raylib\raygui.h(805): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+c:\users\s189064\documents\github\rayunity\hstk\thirdparty\raylib\raygui.h(806): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\s189064\documents\github\rayunity\hstk\thirdparty\raylib\raygui.h(855): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\s189064\documents\github\rayunity\hstk\thirdparty\raylib\raygui.h(856): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\s189064\documents\github\rayunity\hstk\thirdparty\raylib\raygui.h(857): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\s189064\documents\github\rayunity\hstk\thirdparty\raylib\raygui.h(874): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\s189064\documents\github\rayunity\hstk\thirdparty\raylib\raygui.h(878): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\s189064\documents\github\rayunity\hstk\thirdparty\raylib\raygui.h(879): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\s189064\documents\github\rayunity\hstk\thirdparty\raylib\raygui.h(884): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\s189064\documents\github\rayunity\hstk\thirdparty\raylib\raygui.h(886): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\s189064\documents\github\rayunity\hstk\thirdparty\raylib\raygui.h(936): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+c:\users\s189064\documents\github\rayunity\hstk\thirdparty\raylib\raygui.h(936): warning C4244: 'initializing': conversion from 'float' to 'const int', possible loss of data
+c:\users\s189064\documents\github\rayunity\hstk\thirdparty\raylib\raygui.h(938): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+c:\users\s189064\documents\github\rayunity\hstk\thirdparty\raylib\raygui.h(938): warning C4244: 'initializing': conversion from 'float' to 'const int', possible loss of data
+c:\users\s189064\documents\github\rayunity\hstk\thirdparty\raylib\raygui.h(969): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
+c:\users\s189064\documents\github\rayunity\hstk\thirdparty\raylib\raygui.h(970): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
+c:\users\s189064\documents\github\rayunity\hstk\thirdparty\raylib\raygui.h(971): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
+c:\users\s189064\documents\github\rayunity\hstk\thirdparty\raylib\raygui.h(972): warning C4244: '=': conversion from 'const int' to 'float', possible loss of data
+c:\users\s189064\documents\github\rayunity\hstk\thirdparty\raylib\raygui.h(986): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\s189064\documents\github\rayunity\hstk\thirdparty\raylib\raygui.h(987): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\s189064\documents\github\rayunity\hstk\thirdparty\raylib\raygui.h(987): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\s189064\documents\github\rayunity\hstk\thirdparty\raylib\raygui.h(994): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\s189064\documents\github\rayunity\hstk\thirdparty\raylib\raygui.h(995): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\s189064\documents\github\rayunity\hstk\thirdparty\raylib\raygui.h(995): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\s189064\documents\github\rayunity\hstk\thirdparty\raylib\raygui.h(1003): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\s189064\documents\github\rayunity\hstk\thirdparty\raylib\raygui.h(1002): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\s189064\documents\github\rayunity\hstk\thirdparty\raylib\raygui.h(1012): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\s189064\documents\github\rayunity\hstk\thirdparty\raylib\raygui.h(1062): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\s189064\documents\github\rayunity\hstk\thirdparty\raylib\raygui.h(1077): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\s189064\documents\github\rayunity\hstk\thirdparty\raylib\raygui.h(1077): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+c:\users\s189064\documents\github\rayunity\hstk\thirdparty\raylib\raygui.h(1078): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\s189064\documents\github\rayunity\hstk\thirdparty\raylib\raygui.h(1136): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\s189064\documents\github\rayunity\hstk\thirdparty\raylib\raygui.h(1175): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\s189064\documents\github\rayunity\hstk\thirdparty\raylib\raygui.h(1182): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\s189064\documents\github\rayunity\hstk\thirdparty\raylib\raygui.h(1234): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\s189064\documents\github\rayunity\hstk\thirdparty\raylib\raygui.h(1235): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\s189064\documents\github\rayunity\hstk\thirdparty\raylib\raygui.h(1271): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\s189064\documents\github\rayunity\hstk\thirdparty\raylib\raygui.h(1270): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\s189064\documents\github\rayunity\hstk\thirdparty\raylib\raygui.h(1269): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\s189064\documents\github\rayunity\hstk\thirdparty\raylib\raygui.h(1268): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\s189064\documents\github\rayunity\hstk\thirdparty\raylib\raygui.h(1322): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\s189064\documents\github\rayunity\hstk\thirdparty\raylib\raygui.h(1419): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\s189064\documents\github\rayunity\hstk\thirdparty\raylib\raygui.h(1476): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
+c:\users\s189064\documents\github\rayunity\hstk\thirdparty\raylib\raygui.h(1475): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+c:\users\s189064\documents\github\rayunity\hstk\thirdparty\raylib\raygui.h(1490): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+c:\users\s189064\documents\github\rayunity\hstk\thirdparty\raylib\raygui.h(1495): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+c:\users\s189064\documents\github\rayunity\hstk\thirdparty\raylib\raygui.h(1553): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\s189064\documents\github\rayunity\hstk\thirdparty\raylib\raygui.h(1560): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\s189064\documents\github\rayunity\hstk\thirdparty\raylib\raygui.h(1585): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\s189064\documents\github\rayunity\hstk\thirdparty\raylib\raygui.h(1586): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\s189064\documents\github\rayunity\hstk\thirdparty\raylib\raygui.h(1663): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\s189064\documents\github\rayunity\hstk\thirdparty\raylib\raygui.h(1664): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\s189064\documents\github\rayunity\hstk\thirdparty\raylib\raygui.h(1684): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+c:\users\s189064\documents\github\rayunity\hstk\thirdparty\raylib\raygui.h(1689): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+c:\users\s189064\documents\github\rayunity\hstk\thirdparty\raylib\raygui.h(1748): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\s189064\documents\github\rayunity\hstk\thirdparty\raylib\raygui.h(1752): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\s189064\documents\github\rayunity\hstk\thirdparty\raylib\raygui.h(1756): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\s189064\documents\github\rayunity\hstk\thirdparty\raylib\raygui.h(1797): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+c:\users\s189064\documents\github\rayunity\hstk\thirdparty\raylib\raygui.h(1798): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+c:\users\s189064\documents\github\rayunity\hstk\thirdparty\raylib\raygui.h(1799): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+c:\users\s189064\documents\github\rayunity\hstk\thirdparty\raylib\raygui.h(1806): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\s189064\documents\github\rayunity\hstk\thirdparty\raylib\raygui.h(1858): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+c:\users\s189064\documents\github\rayunity\hstk\thirdparty\raylib\raygui.h(1864): warning C4244: 'initializing': conversion from '__int64' to 'int', possible loss of data
+c:\users\s189064\documents\github\rayunity\hstk\thirdparty\raylib\raygui.h(1870): warning C4244: 'initializing': conversion from '__int64' to 'int', possible loss of data
+c:\users\s189064\documents\github\rayunity\hstk\thirdparty\raylib\raygui.h(1875): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+c:\users\s189064\documents\github\rayunity\hstk\thirdparty\raylib\raygui.h(1892): warning C4244: 'initializing': conversion from '__int64' to 'int', possible loss of data
+c:\users\s189064\documents\github\rayunity\hstk\thirdparty\raylib\raygui.h(1897): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+c:\users\s189064\documents\github\rayunity\hstk\thirdparty\raylib\raygui.h(1936): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\s189064\documents\github\rayunity\hstk\thirdparty\raylib\raygui.h(1949): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
+c:\users\s189064\documents\github\rayunity\hstk\thirdparty\raylib\raygui.h(1948): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+c:\users\s189064\documents\github\rayunity\hstk\thirdparty\raylib\raygui.h(1956): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\s189064\documents\github\rayunity\hstk\thirdparty\raylib\raygui.h(1959): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\s189064\documents\github\rayunity\hstk\thirdparty\raylib\raygui.h(1979): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\s189064\documents\github\rayunity\hstk\thirdparty\raylib\raygui.h(1984): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\s189064\documents\github\rayunity\hstk\thirdparty\raylib\raygui.h(2003): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\s189064\documents\github\rayunity\hstk\thirdparty\raylib\raygui.h(2027): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\s189064\documents\github\rayunity\hstk\thirdparty\raylib\raygui.h(2037): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\s189064\documents\github\rayunity\hstk\thirdparty\raylib\raygui.h(2038): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\s189064\documents\github\rayunity\hstk\thirdparty\raylib\raygui.h(2048): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\s189064\documents\github\rayunity\hstk\thirdparty\raylib\raygui.h(2049): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\s189064\documents\github\rayunity\hstk\thirdparty\raylib\raygui.h(2083): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\s189064\documents\github\rayunity\hstk\thirdparty\raylib\raygui.h(2098): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\s189064\documents\github\rayunity\hstk\thirdparty\raylib\raygui.h(2099): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\s189064\documents\github\rayunity\hstk\thirdparty\raylib\raygui.h(2109): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\s189064\documents\github\rayunity\hstk\thirdparty\raylib\raygui.h(2110): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\s189064\documents\github\rayunity\hstk\thirdparty\raylib\raygui.h(2173): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+c:\users\s189064\documents\github\rayunity\hstk\thirdparty\raylib\raygui.h(2173): warning C4244: 'initializing': conversion from 'float' to 'const int', possible loss of data
+c:\users\s189064\documents\github\rayunity\hstk\thirdparty\raylib\raygui.h(2199): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+c:\users\s189064\documents\github\rayunity\hstk\thirdparty\raylib\raygui.h(2206): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+c:\users\s189064\documents\github\rayunity\hstk\thirdparty\raylib\raygui.h(2236): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+c:\users\s189064\documents\github\rayunity\hstk\thirdparty\raylib\raygui.h(2241): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+c:\users\s189064\documents\github\rayunity\hstk\thirdparty\raylib\raygui.h(2333): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\s189064\documents\github\rayunity\hstk\thirdparty\raylib\raygui.h(2337): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+c:\users\s189064\documents\github\rayunity\hstk\thirdparty\raylib\raygui.h(2451): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\s189064\documents\github\rayunity\hstk\thirdparty\raylib\raygui.h(2532): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\s189064\documents\github\rayunity\hstk\thirdparty\raylib\raygui.h(2589): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+c:\users\s189064\documents\github\rayunity\hstk\thirdparty\raylib\raygui.h(2590): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+c:\users\s189064\documents\github\rayunity\hstk\thirdparty\raylib\raygui.h(2597): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\s189064\documents\github\rayunity\hstk\thirdparty\raylib\raygui.h(2596): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\s189064\documents\github\rayunity\hstk\thirdparty\raylib\raygui.h(2664): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\s189064\documents\github\rayunity\hstk\thirdparty\raylib\raygui.h(2665): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\s189064\documents\github\rayunity\hstk\thirdparty\raylib\raygui.h(2666): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\s189064\documents\github\rayunity\hstk\thirdparty\raylib\raygui.h(2667): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\s189064\documents\github\rayunity\hstk\thirdparty\raylib\raygui.h(2668): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\s189064\documents\github\rayunity\hstk\thirdparty\raylib\raygui.h(2669): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\s189064\documents\github\rayunity\hstk\thirdparty\raylib\raygui.h(2671): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\s189064\documents\github\rayunity\hstk\thirdparty\raylib\raygui.h(2724): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\s189064\documents\github\rayunity\hstk\thirdparty\raylib\raygui.h(2779): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+c:\users\s189064\documents\github\rayunity\hstk\thirdparty\raylib\raygui.h(2784): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\s189064\documents\github\rayunity\hstk\thirdparty\raylib\raygui.h(2853): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\s189064\documents\github\rayunity\hstk\thirdparty\raylib\raygui.h(2854): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\s189064\documents\github\rayunity\hstk\hstk\systems.h(32): warning C4005: 'SYSTEM': macro redefinition
+  c:\users\s189064\documents\github\rayunity\hstk\hstk\systems.h(29): note: see previous definition of 'SYSTEM'
+c:\users\s189064\documents\github\rayunity\hstk\hstk\systems.h(61): warning C4018: '<': signed/unsigned mismatch
+c:\users\s189064\documents\github\rayunity\hstk\hstk\systems.h(80): warning C4477: 'printf' : format string '%d' requires an argument of type 'int', but variadic argument 1 has type 'unsigned __int64'
+  c:\users\s189064\documents\github\rayunity\hstk\hstk\systems.h(80): note: consider using '%zd' in the format string
+c:\users\s189064\documents\github\rayunity\hstk\hstk\systems.h(86): warning C4477: 'printf' : format string '%d' requires an argument of type 'int', but variadic argument 1 has type 'unsigned __int64'
+  c:\users\s189064\documents\github\rayunity\hstk\hstk\systems.h(86): note: consider using '%zd' in the format string
+c:\users\s189064\documents\github\rayunity\hstk\hstk\systems.h(91): warning C4477: 'printf' : format string '%d' requires an argument of type 'int', but variadic argument 1 has type 'unsigned __int64'
+  c:\users\s189064\documents\github\rayunity\hstk\hstk\systems.h(91): note: consider using '%zd' in the format string
+c:\users\s189064\documents\github\rayunity\hstk\hstk\systems.h(109): warning C4018: '<': signed/unsigned mismatch
+c:\users\s189064\documents\github\rayunity\hstk\hstk\systems.h(126): warning C4018: '<': signed/unsigned mismatch
+c:\users\s189064\documents\github\rayunity\hstk\hstk\systems.h(129): warning C4477: 'sprintf' : format string '%d' requires an argument of type 'int', but variadic argument 1 has type 'ecs_entity_t'
+  c:\users\s189064\documents\github\rayunity\hstk\hstk\systems.h(129): note: consider using '%lld' in the format string
+  c:\users\s189064\documents\github\rayunity\hstk\hstk\systems.h(129): note: consider using '%Id' in the format string
+  c:\users\s189064\documents\github\rayunity\hstk\hstk\systems.h(129): note: consider using '%I64d' in the format string
+c:\users\s189064\documents\github\rayunity\hstk\hstk\systems.h(138): warning C4005: 'SYSTEM': macro redefinition
+  c:\users\s189064\documents\github\rayunity\hstk\hstk\systems.h(32): note: see previous definition of 'SYSTEM'
+LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
+raylib_static.lib(context.c.obj) : warning LNK4099: PDB 'vc140.pdb' was not found with 'raylib_static.lib(context.c.obj)' or at 'C:\Users\s189064\Documents\GitHub\RayTest1\vc140.pdb'; linking object as if no debug info
+raylib_static.lib(init.c.obj) : warning LNK4099: PDB 'vc140.pdb' was not found with 'raylib_static.lib(init.c.obj)' or at 'C:\Users\s189064\Documents\GitHub\RayTest1\vc140.pdb'; linking object as if no debug info
+raylib_static.lib(input.c.obj) : warning LNK4099: PDB 'vc140.pdb' was not found with 'raylib_static.lib(input.c.obj)' or at 'C:\Users\s189064\Documents\GitHub\RayTest1\vc140.pdb'; linking object as if no debug info
+raylib_static.lib(monitor.c.obj) : warning LNK4099: PDB 'vc140.pdb' was not found with 'raylib_static.lib(monitor.c.obj)' or at 'C:\Users\s189064\Documents\GitHub\RayTest1\vc140.pdb'; linking object as if no debug info
+raylib_static.lib(vulkan.c.obj) : warning LNK4099: PDB 'vc140.pdb' was not found with 'raylib_static.lib(vulkan.c.obj)' or at 'C:\Users\s189064\Documents\GitHub\RayTest1\vc140.pdb'; linking object as if no debug info
+raylib_static.lib(window.c.obj) : warning LNK4099: PDB 'vc140.pdb' was not found with 'raylib_static.lib(window.c.obj)' or at 'C:\Users\s189064\Documents\GitHub\RayTest1\vc140.pdb'; linking object as if no debug info
+raylib_static.lib(win32_init.c.obj) : warning LNK4099: PDB 'vc140.pdb' was not found with 'raylib_static.lib(win32_init.c.obj)' or at 'C:\Users\s189064\Documents\GitHub\RayTest1\vc140.pdb'; linking object as if no debug info
+raylib_static.lib(win32_joystick.c.obj) : warning LNK4099: PDB 'vc140.pdb' was not found with 'raylib_static.lib(win32_joystick.c.obj)' or at 'C:\Users\s189064\Documents\GitHub\RayTest1\vc140.pdb'; linking object as if no debug info
+raylib_static.lib(win32_monitor.c.obj) : warning LNK4099: PDB 'vc140.pdb' was not found with 'raylib_static.lib(win32_monitor.c.obj)' or at 'C:\Users\s189064\Documents\GitHub\RayTest1\vc140.pdb'; linking object as if no debug info
+raylib_static.lib(win32_time.c.obj) : warning LNK4099: PDB 'vc140.pdb' was not found with 'raylib_static.lib(win32_time.c.obj)' or at 'C:\Users\s189064\Documents\GitHub\RayTest1\vc140.pdb'; linking object as if no debug info
+raylib_static.lib(win32_thread.c.obj) : warning LNK4099: PDB 'vc140.pdb' was not found with 'raylib_static.lib(win32_thread.c.obj)' or at 'C:\Users\s189064\Documents\GitHub\RayTest1\vc140.pdb'; linking object as if no debug info
+raylib_static.lib(win32_window.c.obj) : warning LNK4099: PDB 'vc140.pdb' was not found with 'raylib_static.lib(win32_window.c.obj)' or at 'C:\Users\s189064\Documents\GitHub\RayTest1\vc140.pdb'; linking object as if no debug info
+raylib_static.lib(wgl_context.c.obj) : warning LNK4099: PDB 'vc140.pdb' was not found with 'raylib_static.lib(wgl_context.c.obj)' or at 'C:\Users\s189064\Documents\GitHub\RayTest1\vc140.pdb'; linking object as if no debug info
+raylib_static.lib(egl_context.c.obj) : warning LNK4099: PDB 'vc140.pdb' was not found with 'raylib_static.lib(egl_context.c.obj)' or at 'C:\Users\s189064\Documents\GitHub\RayTest1\vc140.pdb'; linking object as if no debug info
+raylib_static.lib(osmesa_context.c.obj) : warning LNK4099: PDB 'vc140.pdb' was not found with 'raylib_static.lib(osmesa_context.c.obj)' or at 'C:\Users\s189064\Documents\GitHub\RayTest1\vc140.pdb'; linking object as if no debug info
+raylib_static.lib(core.c.obj) : warning LNK4099: PDB 'raylib_static.pdb' was not found with 'raylib_static.lib(core.c.obj)' or at 'C:\Users\s189064\Documents\GitHub\RayTest1\raylib_static.pdb'; linking object as if no debug info
+raylib_static.lib(shapes.c.obj) : warning LNK4099: PDB 'raylib_static.pdb' was not found with 'raylib_static.lib(shapes.c.obj)' or at 'C:\Users\s189064\Documents\GitHub\RayTest1\raylib_static.pdb'; linking object as if no debug info
+raylib_static.lib(text.c.obj) : warning LNK4099: PDB 'raylib_static.pdb' was not found with 'raylib_static.lib(text.c.obj)' or at 'C:\Users\s189064\Documents\GitHub\RayTest1\raylib_static.pdb'; linking object as if no debug info
+raylib_static.lib(textures.c.obj) : warning LNK4099: PDB 'raylib_static.pdb' was not found with 'raylib_static.lib(textures.c.obj)' or at 'C:\Users\s189064\Documents\GitHub\RayTest1\raylib_static.pdb'; linking object as if no debug info
+raylib_static.lib(utils.c.obj) : warning LNK4099: PDB 'raylib_static.pdb' was not found with 'raylib_static.lib(utils.c.obj)' or at 'C:\Users\s189064\Documents\GitHub\RayTest1\raylib_static.pdb'; linking object as if no debug info
+  HSTK.vcxproj -> C:\Users\s189064\Documents\GitHub\RayUnity\HSTK\\..\..\RayTest1\HSTK.exe

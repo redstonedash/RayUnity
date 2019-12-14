@@ -21,12 +21,18 @@
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Components.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GetPointerToSharedMemory.h">
       <Filter>Source Files</Filter>
     </ClInclude>
     <ClInclude Include="Systems.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Components.h">
       <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>

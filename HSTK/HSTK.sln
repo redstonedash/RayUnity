@@ -4,11 +4,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 15.0.28307.106
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "HSTK", "HSTK\HSTK.vcxproj", "{34D43405-F89F-4518-8AD6-5AD286EDBEF5}"
-	ProjectSection(ProjectDependencies) = postProject
-		{0DE97D71-D2AC-4F37-A5B4-0DAA31383E82} = {0DE97D71-D2AC-4F37-A5B4-0DAA31383E82}
-	EndProjectSection
-EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "IPCdatachunk", "IPCdatachunk\IPCdatachunk.vcxproj", "{0DE97D71-D2AC-4F37-A5B4-0DAA31383E82}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -26,14 +21,6 @@ Global
 		{34D43405-F89F-4518-8AD6-5AD286EDBEF5}.Release|x64.Build.0 = Release|x64
 		{34D43405-F89F-4518-8AD6-5AD286EDBEF5}.Release|x86.ActiveCfg = Release|Win32
 		{34D43405-F89F-4518-8AD6-5AD286EDBEF5}.Release|x86.Build.0 = Release|Win32
-		{0DE97D71-D2AC-4F37-A5B4-0DAA31383E82}.Debug|x64.ActiveCfg = Debug|x64
-		{0DE97D71-D2AC-4F37-A5B4-0DAA31383E82}.Debug|x64.Build.0 = Debug|x64
-		{0DE97D71-D2AC-4F37-A5B4-0DAA31383E82}.Debug|x86.ActiveCfg = Debug|Win32
-		{0DE97D71-D2AC-4F37-A5B4-0DAA31383E82}.Debug|x86.Build.0 = Debug|Win32
-		{0DE97D71-D2AC-4F37-A5B4-0DAA31383E82}.Release|x64.ActiveCfg = Release|x64
-		{0DE97D71-D2AC-4F37-A5B4-0DAA31383E82}.Release|x64.Build.0 = Release|x64
-		{0DE97D71-D2AC-4F37-A5B4-0DAA31383E82}.Release|x86.ActiveCfg = Release|Win32
-		{0DE97D71-D2AC-4F37-A5B4-0DAA31383E82}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -94,7 +94,7 @@
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>false</ConformanceMode>
       <AdditionalIncludeDirectories>$(SolutionDir)thirdparty\flecs;$(SolutionDir)thirdparty\Raylib</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>FLECS_STATIC;</PreprocessorDefinitions>
+      <PreprocessorDefinitions>FLECS_STATIC;_CRT_SECURE_NO_WARNINGS;</PreprocessorDefinitions>
       <AdditionalOptions>/DSOLUTION_DIR#R\"($(SolutionDir))\" %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
@@ -135,10 +135,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Components.cpp" />
     <ClCompile Include="GetPointerToSharedMemory.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Components.h" />
     <ClInclude Include="GetPointerToSharedMemory.h" />
     <ClInclude Include="Systems.h" />
   </ItemGroup>
