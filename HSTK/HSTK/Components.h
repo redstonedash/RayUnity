@@ -12,8 +12,8 @@
 #endif // !FLECS_H
 #define COMPONENTS_H
 //DEFINE STRUCTS THAT WILL BE COMPONENTS
-struct renderable {};
-
+struct renderable {}; //TAGS ARE LOWERCASE
+struct selected {};
 struct Input { //this exist so input can be consumed
 	bool space;
 	bool leftMouseButton;
@@ -24,18 +24,14 @@ struct Input { //this exist so input can be consumed
 
 __declspec(selectany) Input inputManager = {};
 
-struct Window {
-	Rectangle rect;
-	char * title = "DEFAULT WINDOW";
-};
-
 #pragma endregion
 //DEFINE COMPONENTS, syntax is COMPONENT(id);\
 AND YES YOU DO NEED THE BACKSLASH
 #define COMPONENTS COMPONENT(Model);\
+COMPONENT(Transform);\
+COMPONENT(selected);\
 COMPONENT(renderable);\
 COMPONENT(ModelAnimation);\
-COMPONENT(Window);
 
 #pragma region MoreBoilerPlate
 #define COMPONENT(id) __declspec(selectany) ecs_entity_t ecs_entity(id);

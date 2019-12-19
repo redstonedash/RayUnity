@@ -1,4 +1,5 @@
 #pragma once
+#define SYSTEMS_H
 #ifndef COMPONENTS_H
 #include "Components.h"
 #endif // !COMPONENTS_H
@@ -9,21 +10,20 @@
 #include "raylib.h"
 #include "raymath.h"
 #endif // ! RAYLIB_H
-#ifndef FLECS_H
-#include"flecs.h"
-#endif // !FLECS_H
-#include <fstream>
 #ifndef RAYGUI_H
 #define RAYGUI_IMPLEMENTATION
 #define RAYGUI_SUPPORT_RICONS
 #include "raygui.h"
 #endif // !RAYGUI_H
+#ifndef FLECS_H
+#include"flecs.h"
+#endif // !FLECS_H
+#include <fstream>
 #include <list>
 #include <iterator>
+//SYSTEM SIGNATURES HERE
 #define SYSTEMS \
-SYSTEM(UpdateWindows, EcsOnUpdate, Window)\
-SYSTEM(RenderWindows, EcsManual, Window)\
-SYSTEM(InitializeWindows, EcsOnAdd, Window)
+SYSTEM(DrawTransformInspector, EcsManual, Transform, selected);
 
 #define SYSTEM(id, kind, ...) ecs_entity_t F##id;\
 
@@ -43,94 +43,19 @@ template<typename T> T *addrOf(T &&v) { return &v; }
 
 void Render() {
 	//ECS_COLUMN(rows, Model, model, 1);
-	ecs_run(gameState, FRenderWindows, GetFrameTime(), nullptr);
 	BeginMode3D(c);
 
 	//TODO call system to render 3d objects
 
 	EndMode3D();
 }
-
-std::list<size_t> windowQue = std::list<size_t>();
-void UpdateWindows(ecs_rows_t *rows) {
-	std::list<size_t>::reverse_iterator j;
-	ECS_COLUMN(rows, Window, window, 1);
-	for (j = windowQue.rbegin();
-		j != windowQue.rend();) {
-		int k = 0;
-		for (; k < rows->count; k++) {
-			if (rows->entities[k] == *j) {
-				break;
-			}
-		}
-		if ((CheckCollisionPointRec(inputManager.mousePos, { window[k].rect.x,window[k].rect.y,window[k].rect.width,24 }) && inputManager.leftMouseButton) ||
-			(CheckCollisionPointRec(inputManager.lastMousePos, { window[k].rect.x,window[k].rect.y,window[k].rect.width,24 }) && inputManager.leftMouseButton)) {
-			window[k].rect.x += inputManager.mouseDelta.x;
-			window[k].rect.y += inputManager.mouseDelta.y;
-			inputManager.leftMouseButton = false; //consume mouse input
-			if (j != windowQue.rbegin()) {
-				size_t temp = *j;
-
-				auto tempI = j;
-				tempI++;
-
-				std::list<size_t>::iterator test;
-				for (test = windowQue.begin(); test != windowQue.end(); test++) {
-					printf("%d, ", *test);
-				}
-				printf("\n");
-				windowQue.erase(j.base()--);
-				j = tempI;
-				for (test = windowQue.begin(); test != windowQue.end(); test++) {
-					printf("%d, ", *test);
-				}
-				printf("\n");
-				windowQue.push_back(temp);
-				for (test = windowQue.begin(); test != windowQue.end(); test++) {
-					printf("%d, ", *test);
-				}
-				printf("\n");
-				printf("\n");
-			}
-		}
-		if (j == windowQue.rend()) break;
-		j++;
-		//if(temp)
-	}
+const size_t SMALL_TEXT_FIELD_LENGTH = 32;
+char smallTextFieldBuffer[32];
+void DrawTransformInspector(ecs_rows_t * rows) {
+	ECS_COLUMN(rows, Transform, trs, 1);
+	snprintf(smallTextFieldBuffer, SMALL_TEXT_FIELD_LENGTH, "%f", trs[0].translation.x);
+	GuiTextBox({ ((Vector2*)rows->param)->x, ((Vector2*)rows->param)->y+24.0f, 100,24 }, smallTextFieldBuffer, SMALL_TEXT_FIELD_LENGTH, true);
 }
-
-void RenderWindows(ecs_rows_t *rows) {
-	std::list<size_t>::iterator j; 
-	ECS_COLUMN(rows, Window, window, 1);
-	for (j = windowQue.begin(); 
-		j != windowQue.end();) {
-		int k = 0;
-		for (; k < rows->count; k++) {
-			if (rows->entities[k] == *j) {
-				break;
-			}
-		}
-		if (GuiWindowBox(window[k].rect, window[k].title)) {
-			ecs_delete(rows->world, rows->entities[k]);
-		}
-		if (j == windowQue.end()) break;
-		j++;
-		//if(temp)
-	}
-}
-
-void InitializeWindows(ecs_rows_t *rows)
-{
-	ECS_COLUMN(rows, Window, w, 1);
-	for(int i = 0; i < rows->count; i++){
-		windowQue.push_back(rows->entities[i]);
-		char * testdeletethis = new char[8];
-		sprintf(testdeletethis, "%d", rows->entities[i]);
-		w->title = testdeletethis;
-		w->rect = { inputManager.mousePos.x,inputManager.mousePos.y, 250, 24 };
-	}
-}
-
 
 #define SYSTEM(id, kind, ...) F##id = ecs_new_system(gameState, #id, kind, #__VA_ARGS__, id);\
     ecs_type(id) = ecs_type_from_entity(gameState, F##id);\
@@ -148,12 +73,8 @@ void UpdateInput() { //FIRST CLASS CITIZEN INPUT SYSTEM
 	inputManager.lastMousePos = inputManager.mousePos;
 	inputManager.mousePos = GetMousePosition();
 	inputManager.mouseDelta = { inputManager.mousePos.x - inputManager.lastMousePos.x,inputManager.mousePos.y - inputManager.lastMousePos.y };
-	if (inputManager.space) { //TODO handle this AFTER update so if entities consume inputs we don't make editor actions off of them
-
-		ecs_entity_t window  = ecs_new(gameState, Window);
-		//ecs_set(gameState, window, Window, { {inputManager.mousePos.x,inputManager.mousePos.y, 250, 24}, "DEFAULT WINDOW" });
-	}
 }
 void RegisterInitialEntities() {
-
+	ECS_ENTITY(gameState, testObject, Transform, renderable, Model, selected);
+	ecs_set(gameState, testObject, Transform, { {0.5f,0.1f,0.2f}, Quaternion(), Vector3() });
 }

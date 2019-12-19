@@ -141,6 +141,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Components.h" />
+    <ClInclude Include="EditorGUI.h" />
     <ClInclude Include="GetPointerToSharedMemory.h" />
     <ClInclude Include="Systems.h" />
   </ItemGroup>

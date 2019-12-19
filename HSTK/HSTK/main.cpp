@@ -4,18 +4,20 @@
 //#include "GetPointerToSharedMemory.h"
 #include "flecs.h"
 #include "Systems.h"
-
+#include "EditorGUI.h"
 
 //void * data;
 //Matrix * matrixData;
 //int matrixDataLength;
+
 int width, height;
 int main(int argc, char *argv[]) {
 	//loadSharedMemory();
 	//data = getSharedMemory();
 	//matrixData = (Matrix*)((int*)data + 1);
 	//matrixDataLength = *(int*)data;
-	InitWindow(640, 320, "HSTK");
+	InitWindow(1280, 720, "HSTK");
+
 	c.fovy = 90;
 	c.position = { 5,2,0 };
 	c.target = { 0,0,0 };
@@ -30,9 +32,11 @@ int main(int argc, char *argv[]) {
 		//UPDATE
 		UpdateInput();
 		ecs_progress(gameState, GetFrameTime());
+		UpdateEditor();
 		BeginDrawing();
 		ClearBackground(BLACK);
 		Render(); //was a system but turned out that was a bad idea, it calls other systems though
+		DrawEditor();
 		EndDrawing();
 	}
 	ecs_fini(gameState);
