@@ -78,10 +78,6 @@ RAYGUIDEF int GuiTextBoxGetByteIndex(const char *text, int start, int from, int 
 
 RAYGUIDEF bool GuiTextBoxEx(Rectangle bounds, char *text, int textSize, bool editMode);
 
-#ifdef __cplusplus
-}
-#endif
-
 #endif // GUI_TEXTBOX_EXTENDED_H
 
 /***********************************************************************************
@@ -115,10 +111,10 @@ typedef enum {
 static Rectangle guiTextBoxActive = { 0 };      // Area of the currently active textbox
 
 static GuiTextBoxState guiTextBoxState = {      // Keeps state of the active textbox
-    .cursor = -1,
-    .start = 0,
-    .index = 0,
-    .select = -1 
+	-1,
+	0,
+	0,
+	-1
 };
 
 //----------------------------------------------------------------------------------
@@ -146,7 +142,7 @@ static int EncodeCodepoint(unsigned int c, char out[5]);
 RAYGUIDEF void GuiTextBoxSetActive(Rectangle bounds)
 {
     guiTextBoxActive = bounds;
-    guiTextBoxState = (GuiTextBoxState){ .cursor = -1, .start = 0, .index = 0, .select = -1 };
+    guiTextBoxState = { -1, 0, 0, -1 };
 }
 
 // Gets bounds of active textbox
@@ -176,9 +172,9 @@ RAYGUIDEF void GuiTextBoxSetSelection(int start, int length)
 RAYGUIDEF Vector2 GuiTextBoxGetSelection(void)
 {
     if (guiTextBoxState.select == -1 || guiTextBoxState.select == guiTextBoxState.cursor) return RAYGUI_CLITERAL(Vector2){ 0 };
-    else if (guiTextBoxState.cursor > guiTextBoxState.select) return RAYGUI_CLITERAL(Vector2){ guiTextBoxState.select, guiTextBoxState.cursor - guiTextBoxState.select };
+    else if (guiTextBoxState.cursor > guiTextBoxState.select) return RAYGUI_CLITERAL(Vector2){ (float) guiTextBoxState.select, (float) guiTextBoxState.cursor - guiTextBoxState.select };
 
-    return RAYGUI_CLITERAL(Vector2){ guiTextBoxState.cursor, guiTextBoxState.select - guiTextBoxState.cursor };
+    return RAYGUI_CLITERAL(Vector2){ (float) guiTextBoxState.cursor, (float)(guiTextBoxState.select - guiTextBoxState.cursor) };
 }
 
 // Returns true if a textbox control with specified `bounds` is the active textbox
@@ -1068,5 +1064,7 @@ static int EncodeCodepoint(unsigned int c, char out[5])
     out[len] = 0;
     return len;
 }
-
+#ifdef __cplusplus
+}
+#endif
 #endif // GUI_TEXTBOX_EXTENDED_IMPLEMENTATION

@@ -10,6 +10,7 @@
 #ifndef FLECS_H
 #include"flecs.h"
 #endif // !FLECS_H
+#include <vector>
 #define COMPONENTS_H
 //DEFINE STRUCTS THAT WILL BE COMPONENTS
 struct renderable {}; //TAGS ARE LOWERCASE
@@ -17,10 +18,19 @@ struct selected {};
 struct Input { //this exist so input can be consumed
 	bool space;
 	bool leftMouseButton;
+	bool enter;
 	Vector2 mousePos;
 	Vector2 mouseDelta;
 	Vector2 lastMousePos;
 };
+
+__declspec(selectany) size_t slectedField = -1;
+
+struct TextField {
+	std::string str = std::string();
+	size_t indexInString = 0;
+};
+
 
 __declspec(selectany) Input inputManager = {};
 
@@ -31,7 +41,7 @@ AND YES YOU DO NEED THE BACKSLASH
 COMPONENT(Transform);\
 COMPONENT(selected);\
 COMPONENT(renderable);\
-COMPONENT(ModelAnimation);\
+COMPONENT(ModelAnimation);
 
 #pragma region MoreBoilerPlate
 #define COMPONENT(id) __declspec(selectany) ecs_entity_t ecs_entity(id);

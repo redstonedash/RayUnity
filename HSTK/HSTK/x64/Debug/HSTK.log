@@ -1,9 +1,9 @@
 ﻿C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets(377,5): warning MSB8004: Output Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Output Directory.
 C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets(391,5): warning MSB8028: The intermediate directory (x64\Debug\) contains files shared from another project (TestDataSegCPP.vcxproj).  This can lead to incorrect clean and rebuild behavior.
   main.cpp
-c:\users\s189064\documents\github\rayunity\hstk\hstk\components.h(29): warning C4010: single-line comment contains line-continuation character
-c:\users\s189064\documents\github\rayunity\hstk\hstk\components.h(39): warning C4005: 'COMPONENT': macro redefinition
-  c:\users\s189064\documents\github\rayunity\hstk\hstk\components.h(37): note: see previous definition of 'COMPONENT'
+c:\users\s189064\documents\github\rayunity\hstk\hstk\components.h(39): warning C4010: single-line comment contains line-continuation character
+c:\users\s189064\documents\github\rayunity\hstk\hstk\components.h(49): warning C4005: 'COMPONENT': macro redefinition
+  c:\users\s189064\documents\github\rayunity\hstk\hstk\components.h(47): note: see previous definition of 'COMPONENT'
 c:\users\s189064\documents\github\rayunity\hstk\thirdparty\raylib\raygui.h(587): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
 c:\users\s189064\documents\github\rayunity\hstk\thirdparty\raylib\raygui.h(716): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
 c:\users\s189064\documents\github\rayunity\hstk\thirdparty\raylib\raygui.h(805): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
@@ -118,8 +118,36 @@ c:\users\s189064\documents\github\rayunity\hstk\thirdparty\raylib\raygui.h(2779)
 c:\users\s189064\documents\github\rayunity\hstk\thirdparty\raylib\raygui.h(2784): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
 c:\users\s189064\documents\github\rayunity\hstk\thirdparty\raylib\raygui.h(2853): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
 c:\users\s189064\documents\github\rayunity\hstk\thirdparty\raylib\raygui.h(2854): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-c:\users\s189064\documents\github\rayunity\hstk\hstk\systems.h(32): warning C4005: 'SYSTEM': macro redefinition
-  c:\users\s189064\documents\github\rayunity\hstk\hstk\systems.h(29): note: see previous definition of 'SYSTEM'
-c:\users\s189064\documents\github\rayunity\hstk\hstk\systems.h(62): warning C4005: 'SYSTEM': macro redefinition
-  c:\users\s189064\documents\github\rayunity\hstk\hstk\systems.h(32): note: see previous definition of 'SYSTEM'
+c:\users\s189064\documents\github\rayunity\hstk\thirdparty\raylib\gui_textbox_extended.h(253): warning C4018: '<=': signed/unsigned mismatch
+c:\users\s189064\documents\github\rayunity\hstk\thirdparty\raylib\gui_textbox_extended.h(316): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+c:\users\s189064\documents\github\rayunity\hstk\thirdparty\raylib\gui_textbox_extended.h(326): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+c:\users\s189064\documents\github\rayunity\hstk\thirdparty\raylib\gui_textbox_extended.h(381): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+c:\users\s189064\documents\github\rayunity\hstk\thirdparty\raylib\gui_textbox_extended.h(406): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+c:\users\s189064\documents\github\rayunity\hstk\thirdparty\raylib\gui_textbox_extended.h(416): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\s189064\documents\github\rayunity\hstk\thirdparty\raylib\gui_textbox_extended.h(420): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+c:\users\s189064\documents\github\rayunity\hstk\thirdparty\raylib\gui_textbox_extended.h(425): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\s189064\documents\github\rayunity\hstk\thirdparty\raylib\gui_textbox_extended.h(433): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
+c:\users\s189064\documents\github\rayunity\hstk\thirdparty\raylib\gui_textbox_extended.h(433): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+c:\users\s189064\documents\github\rayunity\hstk\thirdparty\raylib\gui_textbox_extended.h(735): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\s189064\documents\github\rayunity\hstk\thirdparty\raylib\gui_textbox_extended.h(810): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\s189064\documents\github\rayunity\hstk\thirdparty\raylib\gui_textbox_extended.h(815): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\s189064\documents\github\rayunity\hstk\thirdparty\raylib\gui_textbox_extended.h(820): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\s189064\documents\github\rayunity\hstk\thirdparty\raylib\gui_textbox_extended.h(824): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\s189064\documents\github\rayunity\hstk\thirdparty\raylib\gui_textbox_extended.h(876): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+c:\users\s189064\documents\github\rayunity\hstk\thirdparty\raylib\gui_textbox_extended.h(876): warning C4244: 'initializing': conversion from 'int' to 'const float', possible loss of data
+c:\users\s189064\documents\github\rayunity\hstk\thirdparty\raylib\gui_textbox_extended.h(877): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+c:\users\s189064\documents\github\rayunity\hstk\thirdparty\raylib\gui_textbox_extended.h(877): warning C4244: 'initializing': conversion from 'int' to 'const float', possible loss of data
+c:\users\s189064\documents\github\rayunity\hstk\thirdparty\raylib\gui_textbox_extended.h(911): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
+c:\users\s189064\documents\github\rayunity\hstk\thirdparty\raylib\gui_textbox_extended.h(911): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+c:\users\s189064\documents\github\rayunity\hstk\thirdparty\raylib\gui_textbox_extended.h(934): warning C4244: 'return': conversion from 'float' to 'int', possible loss of data
+c:\users\s189064\documents\github\rayunity\hstk\thirdparty\raylib\gui_textbox_extended.h(943): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+c:\users\s189064\documents\github\rayunity\hstk\thirdparty\raylib\gui_textbox_extended.h(943): warning C4244: 'initializing': conversion from 'int' to 'const float', possible loss of data
+c:\users\s189064\documents\github\rayunity\hstk\thirdparty\raylib\gui_textbox_extended.h(944): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+c:\users\s189064\documents\github\rayunity\hstk\thirdparty\raylib\gui_textbox_extended.h(944): warning C4244: 'initializing': conversion from 'int' to 'const float', possible loss of data
+c:\users\s189064\documents\github\rayunity\hstk\hstk\systems.h(39): warning C4005: 'SYSTEM': macro redefinition
+  c:\users\s189064\documents\github\rayunity\hstk\hstk\systems.h(36): note: see previous definition of 'SYSTEM'
+c:\users\s189064\documents\github\rayunity\hstk\hstk\systems.h(66): warning C4018: '<': signed/unsigned mismatch
+c:\users\s189064\documents\github\rayunity\hstk\hstk\systems.h(77): warning C4018: '<': signed/unsigned mismatch
+c:\users\s189064\documents\github\rayunity\hstk\hstk\systems.h(131): warning C4005: 'SYSTEM': macro redefinition
+  c:\users\s189064\documents\github\rayunity\hstk\hstk\systems.h(39): note: see previous definition of 'SYSTEM'
   HSTK.vcxproj -> C:\Users\s189064\Documents\GitHub\RayUnity\HSTK\\..\..\RayTest1\HSTK.exe

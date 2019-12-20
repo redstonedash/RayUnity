@@ -16,7 +16,7 @@
 #endif // !SYSTEMS_H
 #include <iostream>
 #include <list>
-ecs_entity_t selectedEntity;
+#include <string>
 void UpdateInspectorWindow();
 void DrawInspectorWindow();
 void TranslateGizmo();
@@ -28,14 +28,14 @@ struct Gizmo {
 
 std::list<Gizmo>::iterator i;
 
-struct Inspector {
-	Rectangle rect = { 0,0 };
+struct Inspector { //lmao this dosn't need to be a window
+	Vector2 pos = { 0,0 };
 };
 
-std::list<Gizmo> gizmos = std::list<Gizmo>();
-
+std::list<Gizmo> gizmos = std::list<Gizmo>(); //lmao it's not the transform gizmo though
+const float WINDOW_WIDTH = 75.0f, WINDOW_HEIGHT = 24.0f;
 void MakeNewInspector(float x, float y) {
-	Inspector * insp = new Inspector{ { x,y,250,250 } };
+	Inspector * insp = new Inspector{ { x,y } };
 	gizmos.push_back({ insp, DrawInspectorWindow, UpdateInspectorWindow });
 }
 void UpdateEditor() {
@@ -74,15 +74,16 @@ void DrawEditor() {
 
 
 void UpdateInspectorWindow() {
+	
 	if (inputManager.leftMouseButton) {
-		if (CheckCollisionPointRec(inputManager.mousePos, ((Inspector *)(*i).data)->rect) || CheckCollisionPointRec(inputManager.lastMousePos, ((Inspector *)(*i).data)->rect))
+		if (CheckCollisionPointRec(inputManager.mousePos, { ((Inspector *)(*i).data)->pos.x,((Inspector *)(*i).data)->pos.y, WINDOW_WIDTH, WINDOW_HEIGHT } )|| CheckCollisionPointRec(inputManager.lastMousePos, { ((Inspector *)(*i).data)->pos.x,((Inspector *)(*i).data)->pos.y, WINDOW_WIDTH, WINDOW_HEIGHT }))
 		{
 			inputManager.leftMouseButton = false; //consume input;
 			float difx, dify;
-			difx = ((Inspector *)(*i).data)->rect.x - inputManager.lastMousePos.x;
-			dify = ((Inspector *)(*i).data)->rect.y - inputManager.lastMousePos.y;
-			((Inspector *)(*i).data)->rect.x = inputManager.mousePos.x+difx;
-			((Inspector *)(*i).data)->rect.y = inputManager.mousePos.y+dify;
+			difx = ((Inspector *)(*i).data)->pos.x - inputManager.lastMousePos.x;
+			dify = ((Inspector *)(*i).data)->pos.y - inputManager.lastMousePos.y;
+			((Inspector *)(*i).data)->pos.x = inputManager.mousePos.x+difx;
+			((Inspector *)(*i).data)->pos.y = inputManager.mousePos.y+dify;
 			auto tempI = i;
 			gizmos.splice(gizmos.end(), gizmos, tempI);
 			
@@ -92,11 +93,13 @@ void UpdateInspectorWindow() {
 }
 void DrawInspectorWindow() {
 
-	if (GuiWindowBox(((Inspector *)(*i).data)->rect, "Inspector")) { //unfortunatly this needs to be inside of draw
+	if (GuiWindowBox({ ((Inspector *)(*i).data)->pos.x,((Inspector *)(*i).data)->pos.y, WINDOW_WIDTH, WINDOW_HEIGHT }, "Inspector")) { //unfortunatly this needs to be inside of draw
 		delete((*i).data); //dealocate data cause inspector windows use new data
-		gizmos.erase(i++); //remove from list
+		gizmos.erase(i++); //remove from list	
+	} else {
+		Vector2 pos = ((Inspector *)(*i).data)->pos; //just done so the pointers arn't the same
+		ecs_run(gameState, FDrawTransformInspector, GetFrameTime(), &pos);
 	}
-	ecs_run(gameState, FDrawTransformInspector, GetFrameTime(), addrOf(Vector2{ ((Inspector *)(*i).data)->rect.x, ((Inspector *)(*i).data)->rect.y }));
 }
 
 inline void TranslateGizmo()

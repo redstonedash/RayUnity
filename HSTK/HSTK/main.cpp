@@ -35,7 +35,7 @@ int main(int argc, char *argv[]) {
 		UpdateEditor();
 		BeginDrawing();
 		ClearBackground(BLACK);
-		Render(); //was a system but turned out that was a bad idea, it calls other systems though
+		Render(); //was a system but turned out that was a bad idea, it calls other systems though, although it might become a system again, really depends on how i feel that day
 		DrawEditor();
 		EndDrawing();
 	}
