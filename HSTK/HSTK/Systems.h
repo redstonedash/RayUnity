@@ -30,7 +30,13 @@
 #define SYSTEMS \
 SYSTEM(DrawTransformInspector, EcsManual, Transform, selected);\
 SYSTEM(RenderModels, EcsManual, Model, renderable);\
-SYSTEM(RecalculateModelMatrix, EcsOnUpdate, Model, Transform); //TODO hay it would be really nice if you added a "Transform changed" flag
+SYSTEM(RecalculateModelMatrix, EcsOnUpdate, Model, Transform);\
+SYSTEM(DrawTranslationGizmo3D, EcsManual, Transform, selected);\
+SYSTEM(DrawTranslationGizmo2D, EcsManual, Transform, selected);\
+SYSTEM(UpdateTranslationGizmo2D, EcsOnUpdate, Transform, selected);\
+//SYSTEM(Spin, EcsOnUpdate, Transform);\
+
+
 
 #define SYSTEM(id, kind, ...) ecs_entity_t F##id;\
 
@@ -53,8 +59,10 @@ template<typename T> T *addrOf(T &&v) { return &v; }
 
 void Render() {
 	//ECS_COLUMN(rows, Model, model, 1);
+	ecs_run(gameState, FDrawTranslationGizmo2D, GetFrameTime(), nullptr);
 	BeginMode3D(c);
 	ecs_run(gameState, FRenderModels, GetFrameTime(), nullptr);
+	ecs_run(gameState, FDrawTranslationGizmo3D, GetFrameTime(), nullptr);
 	//TODO call system to render 3d objects
 
 	EndMode3D();
@@ -77,6 +85,11 @@ void RenderModels(ecs_rows_t *rows) {
 	for (int i = 0; i < rows->count; i++) {
 		DrawModel(mdl[i], { 0 }, 1.0f, PURPLE);
 	}
+}
+
+void Spin(ecs_rows_t *rows) {
+	ECS_COLUMN(rows, Transform, trs, 1);
+	trs[0].rotation = QuaternionMultiply(QuaternionFromEuler(2.0f*GetFrameTime(), 0, 0), trs[0].rotation);
 }
 
 const size_t SMALL_TEXT_FIELD_LENGTH = 32;
@@ -108,6 +121,7 @@ void DrawTextField(Rectangle rect, const char* formatOptions, T ptrToThing) {
 		snprintf(smallTextFieldBuffer, SMALL_TEXT_FIELD_LENGTH, formatOptions, *ptrToThing);
 		GuiTextBox(rect, smallTextFieldBuffer, SMALL_TEXT_FIELD_LENGTH, false);
 	}
+	textFieldCounter++;
 	
 }
 
@@ -118,12 +132,112 @@ void DrawTransformInspector(ecs_rows_t * rows) {
 	((Vector2*)rows->param)->y += 24.0f;
 	DrawTextField({ ((Vector2*)rows->param)->x, ((Vector2*)rows->param)->y, 100,24 }, "%f", &trs[0].translation.x);
 	((Vector2*)rows->param)->x += 100.0f;
-	snprintf(smallTextFieldBuffer, SMALL_TEXT_FIELD_LENGTH, "%f", trs[0].translation.y);
-	GuiTextBox({ ((Vector2*)rows->param)->x, ((Vector2*)rows->param)->y, 100,24 }, smallTextFieldBuffer, SMALL_TEXT_FIELD_LENGTH, true);
+	DrawTextField({ ((Vector2*)rows->param)->x, ((Vector2*)rows->param)->y, 100,24 }, "%f", &trs[0].translation.y);
 	((Vector2*)rows->param)->x += 100.0f;
-	snprintf(smallTextFieldBuffer, SMALL_TEXT_FIELD_LENGTH, "%f", trs[0].translation.z);
-	GuiTextBox({ ((Vector2*)rows->param)->x, ((Vector2*)rows->param)->y, 100,24 }, smallTextFieldBuffer, SMALL_TEXT_FIELD_LENGTH, true);
+	DrawTextField({ ((Vector2*)rows->param)->x, ((Vector2*)rows->param)->y, 100,24 }, "%f", &trs[0].translation.z);
 	((Vector2*)rows->param)->x -= 200.0f; //return
+}
+
+void DrawTranslationGizmo3D(ecs_rows_t *rows) {
+	ECS_COLUMN(rows, Transform, trs, 1);
+	Vector3 upPos = Vector3Add(Vector3Multiply(Vector3Transform({ 0,1,0 }, QuaternionToMatrix(trs[0].rotation)), 2), trs[0].translation);
+	Vector3 rightPos = Vector3Add(Vector3Multiply(Vector3Transform({ 1,0,0 }, QuaternionToMatrix(trs[0].rotation)), 2), trs[0].translation);
+	Vector3 forwardPos = Vector3Add(Vector3Multiply(Vector3Transform({ 0,0,1 }, QuaternionToMatrix(trs[0].rotation)), 2), trs[0].translation);
+	DrawLine3D(upPos, trs[0].translation, GREEN);
+	DrawLine3D(rightPos, trs[0].translation, RED);
+	DrawLine3D(forwardPos, trs[0].translation, BLUE);
+	//DrawRay({ Vector3Multiply(Vector3RotateByQuaternion({ 0,1,0 }, trs[0].rotation), -1), trs[0].translation }, GREEN);
+}
+enum SelectedGizmo { Null, Up, Right, Forward };
+SelectedGizmo sg = Null;
+void DrawTranslationGizmo2D(ecs_rows_t *rows) {
+	ECS_COLUMN(rows, Transform, trs, 1);
+	Vector3 upPos = Vector3Add(Vector3Multiply(Vector3Transform({ 0,1,0 }, QuaternionToMatrix(trs[0].rotation)), 2), trs[0].translation);
+	Vector3 rightPos = Vector3Add(Vector3Multiply(Vector3Transform({ 1,0,0 }, QuaternionToMatrix(trs[0].rotation)), 2), trs[0].translation);
+	Vector3 forwardPos = Vector3Add(Vector3Multiply(Vector3Transform({ 0,0,1 }, QuaternionToMatrix(trs[0].rotation)), 2), trs[0].translation);
+
+	if (sg == Up) {
+		DrawCircle(
+			GetWorldToScreen(upPos, c).x,
+			GetWorldToScreen(upPos, c).y, 15, WHITE);
+	}
+	else {
+		DrawCircle(
+			GetWorldToScreen(upPos, c).x,
+			GetWorldToScreen(upPos, c).y, 15, GREEN);
+	}
+
+	if (sg == Right) {
+		DrawCircle(
+			GetWorldToScreen(rightPos, c).x,
+			GetWorldToScreen(rightPos, c).y, 15, WHITE);
+	}
+	else {
+		DrawCircle(
+			GetWorldToScreen(rightPos, c).x,
+			GetWorldToScreen(rightPos, c).y, 15, RED);
+	}
+
+	if (sg == Forward) {
+		DrawCircle(
+			GetWorldToScreen(forwardPos, c).x,
+			GetWorldToScreen(forwardPos, c).y, 15, WHITE);
+	}
+	else {
+		DrawCircle(
+			GetWorldToScreen(forwardPos, c).x,
+			GetWorldToScreen(forwardPos, c).y, 15, BLUE);
+	}
+
+	//DrawRay({ Vector3Multiply(Vector3RotateByQuaternion({ 0,1,0 }, trs[0].rotation), -1), trs[0].translation }, GREEN);
+}
+void UpdateTranslationGizmo2D(ecs_rows_t *rows) {
+	ECS_COLUMN(rows, Transform, trs, 1);
+	Vector3 upPos		=	Vector3Add(Vector3Multiply(Vector3Transform({ 0,1,0 }, QuaternionToMatrix(trs[0].rotation)), 2), trs[0].translation);
+	Vector3 rightPos	=	Vector3Add(Vector3Multiply(Vector3Transform({ 1,0,0 }, QuaternionToMatrix(trs[0].rotation)), 2), trs[0].translation);
+	Vector3 forwardPos	=	Vector3Add(Vector3Multiply(Vector3Transform({ 0,0,1 }, QuaternionToMatrix(trs[0].rotation)), 2), trs[0].translation);
+	Vector3 up		=	Vector3Transform({ 0,1,0 }, QuaternionToMatrix(trs[0].rotation));
+	Vector3 right	=	Vector3Transform({ 1,0,0 }, QuaternionToMatrix(trs[0].rotation));
+	Vector3 forward =	Vector3Transform({ 0,0,1 }, QuaternionToMatrix(trs[0].rotation));
+	Vector2 up2d = Vector2Subtract(GetWorldToScreen(upPos, c), GetWorldToScreen(trs[0].translation, c));
+	Vector2 right2d = Vector2Subtract(GetWorldToScreen(rightPos, c), GetWorldToScreen(trs[0].translation, c));
+	Vector2 forward2d = Vector2Subtract(GetWorldToScreen(forwardPos, c), GetWorldToScreen(trs[0].translation, c));
+	if (sg != Null && !inputManager.leftMouseButton) {
+		sg = Null;
+	}
+	switch (sg)
+	{
+	case Up:
+		trs[0].translation=Vector3Add(trs[0].translation, Vector3Multiply(up, Vector2DotProduct(up2d, inputManager.mouseDelta)/10000));
+		break;
+	case Right:
+		trs[0].translation = Vector3Add(trs[0].translation, Vector3Multiply(right, Vector2DotProduct(right2d, inputManager.mouseDelta) / 10000));
+		break;
+	case Forward:
+		trs[0].translation = Vector3Add(trs[0].translation, Vector3Multiply(forward, Vector2DotProduct(forward2d, inputManager.mouseDelta) / 10000));
+		break;
+	case Null:
+		if (CheckCollisionPointCircle(inputManager.mousePos, GetWorldToScreen(upPos, c), 15)) {
+			if (inputManager.leftMouseButton) {
+				sg = Up;
+				inputManager.leftMouseButton = false;
+			}
+		}
+		if (CheckCollisionPointCircle(inputManager.mousePos, GetWorldToScreen(rightPos, c), 15)) {
+			if (inputManager.leftMouseButton) {
+				sg = Right;
+				inputManager.leftMouseButton = false;
+			}
+		}
+
+		if (CheckCollisionPointCircle(inputManager.mousePos, GetWorldToScreen(forwardPos, c), 15)) {
+			if (inputManager.leftMouseButton) {
+				sg = Forward;
+				inputManager.leftMouseButton = false;
+			}
+		}
+		break;
+	}	
 }
 
 #define SYSTEM(id, kind, ...) F##id = ecs_new_system(gameState, #id, kind, #__VA_ARGS__, id);\
@@ -149,5 +263,6 @@ void RegisterInitialEntities() {
 	ECS_ENTITY(gameState, testObject, Transform, renderable, Model, selected);
 	auto temp = LoadModelFromMesh(GenMeshCube(1, 1, 1));
 	ecs_set_ref(gameState, testObject, Model, temp);
-	ecs_set(gameState, testObject, Transform, { {1.0f,0.0f,0.0f}, QuaternionIdentity(), {1.0f,1.0f,1.0f} });
+	
+	ecs_set(gameState, testObject, Transform, { {0.0f,0.0f,0.0f}, QuaternionFromEuler(0,0,0), {1.0f,1.0f,1.0f} });
 }

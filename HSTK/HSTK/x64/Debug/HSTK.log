@@ -144,10 +144,22 @@ c:\users\s189064\documents\github\rayunity\hstk\thirdparty\raylib\gui_textbox_ex
 c:\users\s189064\documents\github\rayunity\hstk\thirdparty\raylib\gui_textbox_extended.h(943): warning C4244: 'initializing': conversion from 'int' to 'const float', possible loss of data
 c:\users\s189064\documents\github\rayunity\hstk\thirdparty\raylib\gui_textbox_extended.h(944): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
 c:\users\s189064\documents\github\rayunity\hstk\thirdparty\raylib\gui_textbox_extended.h(944): warning C4244: 'initializing': conversion from 'int' to 'const float', possible loss of data
-c:\users\s189064\documents\github\rayunity\hstk\hstk\systems.h(39): warning C4005: 'SYSTEM': macro redefinition
-  c:\users\s189064\documents\github\rayunity\hstk\hstk\systems.h(36): note: see previous definition of 'SYSTEM'
-c:\users\s189064\documents\github\rayunity\hstk\hstk\systems.h(66): warning C4018: '<': signed/unsigned mismatch
-c:\users\s189064\documents\github\rayunity\hstk\hstk\systems.h(77): warning C4018: '<': signed/unsigned mismatch
-c:\users\s189064\documents\github\rayunity\hstk\hstk\systems.h(131): warning C4005: 'SYSTEM': macro redefinition
-  c:\users\s189064\documents\github\rayunity\hstk\hstk\systems.h(39): note: see previous definition of 'SYSTEM'
+c:\users\s189064\documents\github\rayunity\hstk\hstk\systems.h(45): warning C4005: 'SYSTEM': macro redefinition
+  c:\users\s189064\documents\github\rayunity\hstk\hstk\systems.h(42): note: see previous definition of 'SYSTEM'
+c:\users\s189064\documents\github\rayunity\hstk\hstk\systems.h(74): warning C4018: '<': signed/unsigned mismatch
+c:\users\s189064\documents\github\rayunity\hstk\hstk\systems.h(85): warning C4018: '<': signed/unsigned mismatch
+c:\users\s189064\documents\github\rayunity\hstk\hstk\systems.h(162): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\s189064\documents\github\rayunity\hstk\hstk\systems.h(161): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\s189064\documents\github\rayunity\hstk\hstk\systems.h(167): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\s189064\documents\github\rayunity\hstk\hstk\systems.h(166): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\s189064\documents\github\rayunity\hstk\hstk\systems.h(173): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\s189064\documents\github\rayunity\hstk\hstk\systems.h(172): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\s189064\documents\github\rayunity\hstk\hstk\systems.h(178): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\s189064\documents\github\rayunity\hstk\hstk\systems.h(177): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\s189064\documents\github\rayunity\hstk\hstk\systems.h(184): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\s189064\documents\github\rayunity\hstk\hstk\systems.h(183): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\s189064\documents\github\rayunity\hstk\hstk\systems.h(189): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\s189064\documents\github\rayunity\hstk\hstk\systems.h(188): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\s189064\documents\github\rayunity\hstk\hstk\systems.h(245): warning C4005: 'SYSTEM': macro redefinition
+  c:\users\s189064\documents\github\rayunity\hstk\hstk\systems.h(45): note: see previous definition of 'SYSTEM'
   HSTK.vcxproj -> C:\Users\s189064\Documents\GitHub\RayUnity\HSTK\\..\..\RayTest1\HSTK.exe
